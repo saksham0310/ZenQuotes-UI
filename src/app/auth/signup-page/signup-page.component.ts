@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthServiceService } from '../auth-service.service';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-signup-page',
@@ -7,13 +9,45 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./signup-page.component.scss']
 })
 export class SignupPageComponent {
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  isLinear = true;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  isLinear = true;
+  firstFormGroup : FormGroup;
+  secondFormGroup : FormGroup;
+
+  constructor(private _formBuilder: FormBuilder, private authService:AuthServiceService) {
+
+    this.firstFormGroup = this._formBuilder.group({
+      Email: ['', Validators.required],
+    });
+
+    this.secondFormGroup = this._formBuilder.group({
+      Password: ['', Validators.required],
+    });
+
+  }
+  
+  onSumbit()
+  {
+    try {
+      if(this.firstFormGroup.valid && this.secondFormGroup.valid) {
+
+        const user: User = {
+          email:this.firstFormGroup.value.Email,
+          password:this.secondFormGroup.value.Password
+        }
+        
+        this.authService.signup(user).subscribe({
+          next:(response)=>{
+            alert("Login successful: "+response);
+          },
+          error:(err)=>{
+            alert("Sign-up fail: "+err)
+          }
+        });
+    } 
+  } catch(error) {
+      alert("Fail to Signup: "+ error)
+    }
+  }
+
 }

@@ -7,10 +7,10 @@
             <mat-stepper [linear]="isLinear" #stepper>
                 <mat-step [stepControl]="firstFormGroup">
                     <form [formGroup]="firstFormGroup">
-                        <ng-template matStepLabel>Fill out your name</ng-template>
+                        <ng-template matStepLabel>Fill out your email</ng-template>
                         <mat-form-field appearance="outline">
-                            <mat-label>Name</mat-label>
-                            <input matInput formControlName="firstCtrl" required>
+                            <mat-label>Email</mat-label>
+                            <input matInput formControlName="Email" required>
                         </mat-form-field>
                         <div>
                             <button mat-button matStepperNext>Next</button>
@@ -21,11 +21,11 @@
                     <form [formGroup]="secondFormGroup">
                         <mat-form-field appearance="outline">
                             <mat-label>Password</mat-label>
-                            <input matInput formControlName="secondCtrl" required>
+                            <input matInput formControlName="Password" required>
                         </mat-form-field>
                         <div>
                             <button mat-button matStepperPrevious>Back</button>
-                            <button mat-button matStepperNext>Next</button>
+                            <button mat-button matStepperNext (click)="onSumbit()">Next</button>
                         </div>
                     </form>
                 </mat-step>
