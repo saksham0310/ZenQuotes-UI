@@ -1,6 +1,6 @@
 <div class="main">
-    <div class="card">
-        <div class="card-header text-center">
+    <div class="card shadow-lg p-4 rounded-lg">
+        <div class="card-header text-center bg-primary text-white rounded-top">
             <h3>Sign-Up Here!!</h3>
         </div>
         <div class="card-body">
@@ -8,32 +8,33 @@
                 <mat-step [stepControl]="firstFormGroup">
                     <form [formGroup]="firstFormGroup">
                         <ng-template matStepLabel>Fill out your email</ng-template>
-                        <mat-form-field appearance="outline">
+                        <mat-form-field class="w-100" appearance="outline">
                             <mat-label>Email</mat-label>
-                            <input matInput formControlName="Email" required>
+                            <input matInput formControlName="Email" placeholder="Enter your email" required>
                         </mat-form-field>
-                        <div>
-                            <button mat-button matStepperNext>Next</button>
+                        <div class="text-end">
+                            <button mat-raised-button class="custom-btn" color="primary" matStepperNext>Next</button>
                         </div>
                     </form>
                 </mat-step>
-                <mat-step [stepControl]="secondFormGroup" label="Password">
+                <mat-step [stepControl]="secondFormGroup">
                     <form [formGroup]="secondFormGroup">
-                        <mat-form-field appearance="outline">
+                        <ng-template matStepLabel>Password</ng-template>
+                        <mat-form-field class="w-100" appearance="outline">
                             <mat-label>Password</mat-label>
-                            <input matInput formControlName="Password" required>
+                            <input matInput type="password" formControlName="Password" placeholder="Enter your password" required>
                         </mat-form-field>
-                        <div>
-                            <button mat-button matStepperPrevious>Back</button>
-                            <button mat-button matStepperNext (click)="onSumbit()">Next</button>
+                        <div class="d-flex justify-content-between">
+                            <button mat-stroked-button class="warn-btn" color="warn" matStepperPrevious>Back</button>
+                            <button mat-raised-button class="custom-btn" color="primary" matStepperNext (click)="onSubmit()">Next</button>
                         </div>
                     </form>
                 </mat-step>
                 <mat-step>
                     <ng-template matStepLabel>Done</ng-template>
-                    <p>You are now done.</p>
-                    <div>
-                        <button mat-button>Done</button>
+                    <p class="text-center">You are now done.</p>
+                    <div class="text-center">
+                        <button mat-raised-button class="custom-btn" color="accent" routerLink="/login">Finish</button>
                     </div>
                 </mat-step>
             </mat-stepper>

@@ -14,3 +14,47 @@
     flex-direction: column;
     align-items: center;
 }
+
+.mat-stepper-horizontal {
+    margin-top: 20px;
+}
+
+.mat-mdc-form-field {
+    margin-top: 16px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+    height: 100vh;
+    padding: 20px;
+}
+
+.card {
+    max-width: 594px;
+    width: 100%;
+}
+
+.custom-btn {
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.warn-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}

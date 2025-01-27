@@ -26,8 +26,7 @@ export class SignupPageComponent {
 
   }
   
-  onSumbit()
-  {
+  onSubmit() {
     try {
       if(this.firstFormGroup.valid && this.secondFormGroup.valid) {
 
@@ -38,15 +37,12 @@ export class SignupPageComponent {
         
         this.authService.signup(user).subscribe({
           next:(response)=>{
-            alert("Login successful: "+response);
           },
           error:(err)=>{
-            alert("Sign-up fail: "+err)
           }
         });
     } 
   } catch(error) {
-      alert("Fail to Signup: "+ error)
     }
   }
 

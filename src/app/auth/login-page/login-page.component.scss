@@ -1,10 +1,7 @@
-.email-container mat-form-field+mat-form-field {
-    margin-left: 8px;
-    width: 100%;
-}
-
+.email-container mat-form-field+mat-form-field,
 .password-container mat-form-field+mat-form-field {
     margin-left: 8px;
+    width: 100%;
 }
 
 .password-right-align {
@@ -23,12 +20,43 @@ input.password-right-align {
 .main {
     display: flex;
     justify-content: center;
-    background-color: black;
-    height: 100%;
-    flex-direction: column;
     align-items: center;
+    background-color: darkgray;
+    height: 100vh;
+    padding: 20px;
+    color: #fff;
 }
 
 .card {
-    min-width: 30%;
+    max-width: 400px;
+    width: 100%;
+    background-color: whitesmoke;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.custom-btn {
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: #3700b3;
+}
+
+.btn {
+    border: none;
+    background: transparent;
+}
+
+.all-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
