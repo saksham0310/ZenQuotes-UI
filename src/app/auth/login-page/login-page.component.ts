@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { AuthServiceService } from '../auth-service.service';
 import { User } from 'src/app/models/user.model';
+import { NotificationService } from 'src/app/common/service/notification.service';
 
 @Component({
   selector: 'app-login-page',
@@ -13,26 +14,27 @@ export class LoginPageComponent {
   password: FormControl;
   hide = false;
 
-  constructor(private auth: AuthServiceService) {
+  constructor(private auth: AuthServiceService, private notificationService: NotificationService) {
     this.email = new FormControl('', [Validators.required, Validators.email]);
     this.password = new FormControl('', [Validators.required]);
   }
 
   onSubmit() {
-      if (this.email.valid && this.password.valid) {
-        const user: User = { email: this.email.value, password: this.password.value };
-        console.log(user);
-        this.auth.login(user).subscribe(
-          {
-            next: (response) => {
-              console.log("login successful")
-            },
-            error: (error) => {
-              console.log("Invalid!!",error)
-            }
+    if (this.email.valid && this.password.valid) {
+      const user: User = { email: this.email.value, password: this.password.value };
+      console.log(user);
+      this.auth.login(user).subscribe(
+        {
+          next: () => {
+            this.notificationService.callNotification('Login successful!!', "success");
+          },
+          error: (error) => {
+            this.notificationService.callNotification('Login un-successful!!', "error");
+            console.log(error)
           }
-        )
-      }
+        }
+      )
+    }
   }
 
   getErrorMessage() {

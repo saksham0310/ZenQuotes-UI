@@ -10,6 +10,17 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.mat-typography h3{
+.mat-typography h3 {
     margin: 0;
 }
+
+.success-snackbar {
+    background-color: #4caf50;
+    color: white;
+}
+
+.error-snackbar {
+    background-color: #f44336;
+    color: white;
+}
+
