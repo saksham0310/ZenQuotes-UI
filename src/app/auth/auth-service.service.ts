@@ -16,8 +16,10 @@ export class AuthServiceService {
     return this.http.post(`${this.apiUrl}sign-up`,user);
   }
  
-  login(user: User):Observable<any>
+  login(user: User):Observable<string>
   {
-    return this.http.post(`${this.apiUrl}login`,user);
+    return this.http.post(`${this.apiUrl}login`,user,{
+      responseType:'text',
+    });
   }
 }
