@@ -14,6 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HomePageComponent } from './components/quote/home-page/home-page.component';
 import { UploadPageComponent } from './components/quote/upload-page/upload-page.component';
+import { NavBarComponent } from './common/nav-bar/nav-bar.component';
+import { PostCardComponent } from './common/post-card/post-card.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -22,6 +27,8 @@ import { UploadPageComponent } from './components/quote/upload-page/upload-page.
     SignupPageComponent,
     HomePageComponent,
     UploadPageComponent,
+    NavBarComponent,
+    PostCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,10 @@ import { UploadPageComponent } from './components/quote/upload-page/upload-page.
     MatIconModule,
     MatStepperModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule,
+    MatButtonModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthServiceService } from '../auth-service.service';
+import { AuthServiceService } from '../../../service/auth-service.service';
 import { User } from 'src/app/models/user.model';
 import { NotificationService } from 'src/app/service/notification.service';
 

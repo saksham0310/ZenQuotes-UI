@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { AuthServiceService } from '../auth-service.service';
+import { AuthServiceService } from '../../../service/auth-service.service';
 import { User } from 'src/app/models/user.model';
 import { NotificationService } from 'src/app/service/notification.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -14,7 +15,9 @@ export class LoginPageComponent {
   password: FormControl;
   hide = false;
 
-  constructor(private auth: AuthServiceService, private notificationService: NotificationService) {
+  constructor(private auth: AuthServiceService,
+              private notificationService: NotificationService,
+              private route:Router  ) {
     this.email = new FormControl('', [Validators.required, Validators.email]);
     this.password = new FormControl('', [Validators.required]);
   }
@@ -22,11 +25,11 @@ export class LoginPageComponent {
   onSubmit() {
     if (this.email.valid && this.password.valid) {
       const user: User = { email: this.email.value, password: this.password.value };
-      console.log(user);
       this.auth.login(user).subscribe(
         {
           next: () => {
             this.notificationService.callNotification('Login successful!!', "success");
+            this.route.navigate(['/home-page']);
           },
           error: (error) => {
             this.notificationService.callNotification('Login un-successful!!', "error");

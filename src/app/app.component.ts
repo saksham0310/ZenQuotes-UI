@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ZenQuotes-UI';
+  showNav!: boolean;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(()=>{
+
+      const hideNav=['/login','/sign-up'];
+      
+      this.showNav=!hideNav.includes(this.router.url);
+    });
+  }
+
 }
