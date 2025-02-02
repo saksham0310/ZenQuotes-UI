@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { AuthServiceService } from '../auth-service.service';
 import { User } from 'src/app/models/user.model';
-import { NotificationService } from 'src/app/common/service/notification.service';
+import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-login-page',
