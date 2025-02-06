@@ -1,0 +1,44 @@
+/* Card styling */
+.card {
+    border-radius: 10px;
+    border: none;
+    background-color: #6a8dff; /* Softer, lighter Royal Blue */
+    color: white; /* Text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card header styling */
+.card-header {
+    background-color: #4c70d0; /* Slightly darker shade of blue */
+    color: white; /* Text color */
+    border-bottom: 1px solid #3c5b94; /* Soft border for separation */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Button styling */
+button {
+    background-color: #3c5b94; /* Soft dark blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #35588f; /* Slightly darker shade on hover */
+}
+
+/* Quote text styling */
+.card-body p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Author name styling */
+.card-body h5 {
+    font-size: 1em;
+    color: #d3d3d3; /* Light grey for the author name */
+}
