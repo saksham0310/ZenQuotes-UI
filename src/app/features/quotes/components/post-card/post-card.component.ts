@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Quote } from 'src/app/models/quote.model';
+import { Quote } from 'src/app/features/quotes/models/quote.model';
 
 @Component({
   selector: 'app-post-card',

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { AuthServiceService } from '../../../service/auth-service.service';
-import { User } from 'src/app/models/user.model';
-import { NotificationService } from 'src/app/service/notification.service';
+import { AuthServiceService } from '../../services/auth-service.service';
+import { User } from 'src/app/auth/models/user.model';
+import { NotificationService } from 'src/app/common/services/notification.service';
 import { Router } from '@angular/router';
 
 @Component({

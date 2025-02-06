@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Quote } from 'src/app/models/quote.model';
-import { HomePageService } from 'src/app/service/home-page.service';
+import { Quote } from 'src/app/features/quotes/models/quote.model';
+import { HomePageService } from 'src/app/features/quotes/services/home-page.service';
 
 @Component({
   selector: 'app-home-page',
