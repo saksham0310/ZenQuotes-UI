@@ -29,7 +29,7 @@ export class LoginPageComponent {
         {
           next: () => {
             this.notificationService.callNotification('Login successful!!', "success");
-            this.route.navigate(['/home-page']);
+            this.route.navigate(['/dashboard']);
           },
           error: (error) => {
             this.notificationService.callNotification('Login un-successful!!', "error");

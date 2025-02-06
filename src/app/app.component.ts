@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe(()=>{
 
-      const hideNav=['/auth/login','/auth/sign-up'];
+      const hideNav=['/auth/login','/auth/sign-up','/dashboard'];
       
       this.showNav=!hideNav.includes(this.router.url);
     });
