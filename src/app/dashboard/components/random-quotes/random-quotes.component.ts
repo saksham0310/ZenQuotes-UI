@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { RandomQuote } from '../../models/random-quotes.model';
 import { GetRandomQuotesService } from '../../services/get-random-quotes.service';
 
@@ -7,15 +7,17 @@ import { GetRandomQuotesService } from '../../services/get-random-quotes.service
   templateUrl: './random-quotes.component.html',
   styleUrls: ['./random-quotes.component.scss']
 })
-export class RandomQuotesComponent {
+export class RandomQuotesComponent implements OnInit  {
 
-  qoute: RandomQuote = {
-    q: "Click button to get Quotes!!",
-    a: "ZenQuotes",
-    h: ''
-  };
+  qoute!: RandomQuote;
 
   constructor(private getRandomQuotesService: GetRandomQuotesService) { }
+
+  ngOnInit(): void {
+    this.getRandomQuotesService.getRandomQuote().subscribe((value) => {
+      return this.qoute = value[0];
+    })
+  }
 
   onClick(): void {
     this.getRandomQuotesService.getRandomQuote().subscribe((value) => {
